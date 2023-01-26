@@ -82,6 +82,10 @@ public void onLivingUpdate(LivingUpdateEvent livingupdateevent) {
             FastBreak.onPacket(object,connection_side);
             AutoFish.onPacket(object,connection_side);
             Wool.onPacket(object,connection_side);
+            flag = Dada.onPacket(object,connection_side);
+            if(!flag){
+                return false;
+            }
             flag = NewKillaura.onPacket(object,connection_side);
             if(!flag){
                 return false;
