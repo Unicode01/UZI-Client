@@ -1,0 +1,8 @@
+﻿  Building 'Driver' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  main.c
+  Driver.vcxproj -> C:\Users\17121\Desktop\ProcessId\x64\Release\Driver.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\17121\Desktop\ProcessId\x64\Release\Driver.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  
