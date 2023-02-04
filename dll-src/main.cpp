@@ -277,13 +277,27 @@ DWORD WINAPI MainThread(CONST LPVOID lpParam)
     ExitThread(0);
 }
 
-extern "C" DLL_EXPORT BOOL APIENTRY DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+BOOL WINAPI DllMain(HINSTANCE hinstDLL,DWORD fdwReason,LPVOID lpvReserved)
 {
     switch (fdwReason)
     {
         case DLL_PROCESS_ATTACH:
-            CreateThread(NULL, 0, &MainThread, NULL, 0, NULL);
+        {
+        	CreateThread(NULL, 0, &MainThread, NULL, 0, NULL);
             break;
+		}
+        case DLL_PROCESS_DETACH:
+		{
+			break;
+		}
+		case DLL_THREAD_ATTACH:
+		{
+			break;
+		}
+		case DLL_THREAD_DETACH:
+		{
+			break;
+		}
     }
     return TRUE; // succesful
 }
