@@ -24,6 +24,9 @@ public class SafeWalk extends GuiSettings{
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

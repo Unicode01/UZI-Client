@@ -43,9 +43,8 @@ public class KeystrokesMod
     }
 
     public void init(){
-        FMLCommonHandler.instance().bus().register((Object)this);
-        MinecraftForge.EVENT_BUS.register((Object)this);
-        MinecraftForge.EVENT_BUS.register(new InvEvent());
+        Nan0EventRegister.register(MinecraftForge.EVENT_BUS,this);
+        Nan0EventRegister.register(FMLCommonHandler.instance().bus(), this);
         KeystrokesMod.w.m().r();
         final FPSRenderer w = KeystrokesMod.w;
         FPSRenderer.c = new Colors();

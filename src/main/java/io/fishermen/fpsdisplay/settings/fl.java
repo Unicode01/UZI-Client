@@ -32,6 +32,9 @@ public class fl extends GuiSettings
 
     @SubscribeEvent
     public void a(final LivingEvent.LivingUpdateEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

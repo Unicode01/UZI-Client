@@ -48,6 +48,9 @@ public class nes extends GuiSettings
     
     @SubscribeEvent
     public void a(final TickEvent.PlayerTickEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

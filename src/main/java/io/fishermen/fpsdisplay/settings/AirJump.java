@@ -9,6 +9,9 @@ public class AirJump extends GuiSettings{
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent en){
+        if(!this.getStat()){
+            return;
+        }
         if(mc.thePlayer.fallDistance >= 0.8F && GuiSettings.isPlayerInGame()){
             mc.thePlayer.fallDistance=0F;
             mc.thePlayer.onGround=true;

@@ -25,6 +25,9 @@ public class Strafe extends GuiSettings{
     }
     @SubscribeEvent
     public void a(LivingEvent.LivingUpdateEvent e){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

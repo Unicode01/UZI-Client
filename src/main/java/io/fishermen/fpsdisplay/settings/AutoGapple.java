@@ -20,6 +20,9 @@ public class AutoGapple extends GuiSettings{
     }
     @SubscribeEvent
     public void e(TickEvent.PlayerTickEvent e){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

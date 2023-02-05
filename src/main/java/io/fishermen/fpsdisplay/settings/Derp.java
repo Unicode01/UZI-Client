@@ -14,6 +14,9 @@ public class Derp extends GuiSettings{
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent en){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

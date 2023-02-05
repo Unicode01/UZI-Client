@@ -14,7 +14,8 @@ import org.lwjgl.opengl.GL11;
 import pw.cinque.CommandSettings.CommandSettings;
 import pw.cinque.keystrokes.render.Mode;
 
-public class KeystrokesGui extends Mode
+public class
+KeystrokesGui extends Mode
 {
     private boolean h;
     private CommandSettings v;

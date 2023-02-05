@@ -58,6 +58,9 @@ public class Scaffold extends GuiSettings {
     }
     @SubscribeEvent
     public void a(final TickEvent.RenderTickEvent a){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

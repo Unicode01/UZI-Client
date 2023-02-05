@@ -40,6 +40,9 @@ public class Da extends GuiSettings {
     }
     @SubscribeEvent
     public void onTick(LivingEvent.LivingUpdateEvent event) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

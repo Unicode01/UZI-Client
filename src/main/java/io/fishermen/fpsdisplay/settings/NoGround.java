@@ -16,6 +16,9 @@ public class NoGround extends GuiSettings {
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent E){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

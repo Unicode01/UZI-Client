@@ -41,6 +41,9 @@ public class Zlo extends GuiSettings
     
     @SubscribeEvent
     public void onPre(final RenderLivingEvent.Specials.Pre d) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

@@ -149,6 +149,9 @@ public class FreeCam extends GuiSettings{
 
     @SubscribeEvent
     public void re(RenderWorldLastEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if (GuiSettings.isPlayerInGame()) {
             mc.thePlayer.renderArmPitch = mc.thePlayer.prevRenderArmPitch = 700.0F;
             GuiSettings.HUD.drawBoxAroundEntity(mc.thePlayer, 1, 0.0D, 0.0D, Color.green.getRGB(), false);
@@ -159,6 +162,9 @@ public class FreeCam extends GuiSettings{
 
     @SubscribeEvent
     public void m(MouseEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if (GuiSettings.isPlayerInGame() && e.button != -1) {
             e.setCanceled(true);
         }

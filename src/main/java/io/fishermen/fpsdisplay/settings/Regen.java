@@ -23,6 +23,9 @@ public class Regen extends GuiSettings{
     }
     @SubscribeEvent
     public void a (TickEvent.PlayerTickEvent ena){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

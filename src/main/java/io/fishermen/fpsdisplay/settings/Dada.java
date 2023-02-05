@@ -46,8 +46,9 @@ public class Dada extends GuiSettings
     public static boolean onPacket(Object object, Connection.Side connection_side) {
         if(!ena || M.g3tV4l4u3() != 2) return true;
         if(connection_side == Connection.Side.OUT && object instanceof C0EPacketClickWindow && !isChoosing){
+            Packets.add(object);
             isChoosing = true;
-            return true;
+            return false;
         }
         if(connection_side == Connection.Side.OUT && object instanceof C0DPacketCloseWindow && isChoosing){
             Packets.add(object);
@@ -59,6 +60,9 @@ public class Dada extends GuiSettings
 
     @SubscribeEvent
     public void a(final PlayerTickEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             Packets.clear();
             return;

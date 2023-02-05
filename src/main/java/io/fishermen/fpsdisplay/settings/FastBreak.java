@@ -48,6 +48,9 @@ public class FastBreak extends GuiSettings {
     }
     @SubscribeEvent
     public void onUpdate(TickEvent.PlayerTickEvent event) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

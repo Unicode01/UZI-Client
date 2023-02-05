@@ -30,6 +30,9 @@ public class NoHurtCam extends GuiSettings{
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent E){
+        if(!this.getStat()){
+            return;
+        }
         if(CancelTick){
             CancelTick=false;
             HurtTick=false;

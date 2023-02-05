@@ -253,6 +253,9 @@ public class NewKillaura extends GuiSettings{
     }
     @SubscribeEvent
     public void Res(PlayerEvent.PlayerRespawnEvent P){
+        if(!this.getStat()){
+            return;
+        }
         if(P.player == mc.thePlayer){
             TimeHelper.reset();
             TimeHelper2.reset();
@@ -274,6 +277,9 @@ public class NewKillaura extends GuiSettings{
     }
     @SubscribeEvent
     public void ab(TickEvent.PlayerTickEvent event){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame() || (InGUI.i() && mc.currentScreen != null)){
             return;
         }

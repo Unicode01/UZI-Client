@@ -80,6 +80,9 @@ public class Scaffold2 extends GuiSettings{
     }
     @SubscribeEvent
     public void Res(PlayerEvent.PlayerRespawnEvent E){
+        if(!this.getStat()){
+            return;
+        }
         if(E.player == mc.thePlayer){
             yawChangeTo = 0;
             LastYaw = 0;
@@ -248,6 +251,9 @@ public class Scaffold2 extends GuiSettings{
 
     @SubscribeEvent
     public void a(final TickEvent.RenderTickEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

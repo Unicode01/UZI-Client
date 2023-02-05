@@ -26,6 +26,9 @@ public class RR extends GuiSettings
     
     @SubscribeEvent
     public void a(final AttackEntityEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }
@@ -39,6 +42,9 @@ public class RR extends GuiSettings
     
     @SubscribeEvent
     public void onTick(final TickEvent.RenderTickEvent ee) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

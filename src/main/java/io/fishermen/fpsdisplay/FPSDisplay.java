@@ -44,6 +44,9 @@ public class FPSDisplay extends GuiSettings
 
     @SubscribeEvent
     public void a(final MouseEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

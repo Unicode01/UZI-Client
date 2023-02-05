@@ -33,6 +33,7 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import pw.cinque.event.EventSlowDown;
+import pw.cinque.event.Nan0EventRegister;
 
 import java.util.ArrayList;
 
@@ -162,18 +163,24 @@ public abstract class GuiSettings
     
     public void dd() {
     }
+
+    public boolean getStat(){
+        return this.en;
+    }
     
     public void t() {
         final boolean en = !this.en;
         this.en = en;
         if (!en) {
-            MinecraftForge.EVENT_BUS.unregister((Object)this);
-            FMLCommonHandler.instance().bus().unregister((Object)this);
+            //MinecraftForge.EVENT_BUS.unregister((Object)this);
+            //FMLCommonHandler.instance().bus().unregister((Object)this);
             this.dd();
         }
         if (this.en) {
-            MinecraftForge.EVENT_BUS.register((Object)this);
-            FMLCommonHandler.instance().bus().register((Object)this);
+            Nan0EventRegister.register(MinecraftForge.EVENT_BUS,this);
+            Nan0EventRegister.register(FMLCommonHandler.instance().bus(),this);
+            //MinecraftForge.EVENT_BUS.register((Object)this);
+            //FMLCommonHandler.instance().bus().register((Object)this);
             this.en();
         }
     }

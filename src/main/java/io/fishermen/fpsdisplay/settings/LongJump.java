@@ -13,6 +13,9 @@ public class LongJump extends GuiSettings {
 
     @SubscribeEvent
     public void a(final PlayerTickEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

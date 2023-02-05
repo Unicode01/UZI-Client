@@ -29,6 +29,9 @@ public class ChestESP extends GuiSettings{
     }
     @SubscribeEvent
     public void onRenderWorldLast(RenderWorldLastEvent ev) {
+        if(!this.getStat()){
+            return;
+        }
         if (GuiSettings.isPlayerInGame()) {
             int rgb = d.i() ? a(6000, -270) : (new Color((int)a.g3tV4l4u3(), (int)b.g3tV4l4u3(), (int)c.g3tV4l4u3())).getRGB();
             Iterator var3 = mc.theWorld.loadedTileEntityList.iterator();

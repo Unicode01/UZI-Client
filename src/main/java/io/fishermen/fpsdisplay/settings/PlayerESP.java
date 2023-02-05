@@ -15,6 +15,9 @@ public class PlayerESP extends GuiSettings {
     }
     @SubscribeEvent
     public void a(final RenderLivingEvent.Specials.Pre d){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

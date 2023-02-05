@@ -36,6 +36,9 @@ public class Boker extends GuiSettings
     
     @Override
     public void ti() {
+        if(!this.getStat()){
+            return;
+        }
         if (Boker.mc.theWorld != null && mc.thePlayer != null) {
             if (Boker.ww.i()) {
                 if (Boker.mc.thePlayer.getCurrentEquippedItem() == null) {

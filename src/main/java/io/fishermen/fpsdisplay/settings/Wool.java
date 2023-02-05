@@ -86,6 +86,9 @@ public class Wool extends GuiSettings
 
     @SubscribeEvent
     public void onTick(final TickEvent.RenderTickEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

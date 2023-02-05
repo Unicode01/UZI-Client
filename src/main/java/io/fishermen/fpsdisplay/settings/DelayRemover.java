@@ -16,6 +16,9 @@ public class DelayRemover extends GuiSettings{
     }
     @SubscribeEvent
     public void playerTickEvent(PlayerTickEvent event) {
+        if(!this.getStat()){
+            return;
+        }
         if (GuiSettings.isPlayerInGame() && this.leftClickCounterField != null) {
             if (!mc.inGameHasFocus || mc.thePlayer.capabilities.isCreativeMode) {
                 return;

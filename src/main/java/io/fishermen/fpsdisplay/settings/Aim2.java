@@ -127,6 +127,9 @@ public class Aim2 extends GuiSettings{
 
     @SubscribeEvent
     public void onPre(TickEvent.PlayerTickEvent event) {
+        if(!this.getStat()){
+            return;
+        }
         if (mc.theWorld != null) {
             if (mc.thePlayer != null) {
                 if (mc.thePlayer.isEntityAlive()) {

@@ -89,6 +89,9 @@ public class Xray extends GuiSettings{
 
     @SubscribeEvent
     public void orl(RenderWorldLastEvent ev) {
+        if(!this.getStat()){
+            return;
+        }
         if (GuiSettings.isPlayerInGame() && !this.ren.isEmpty()) {
             List<BlockPos> tRen = new ArrayList<>(this.ren);
 

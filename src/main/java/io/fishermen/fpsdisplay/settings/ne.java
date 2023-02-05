@@ -14,6 +14,9 @@ public class ne extends GuiSettings
     
     @SubscribeEvent
     public void a(final TickEvent.PlayerTickEvent a) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

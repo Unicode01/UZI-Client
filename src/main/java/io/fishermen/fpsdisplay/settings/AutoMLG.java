@@ -26,6 +26,12 @@ public class AutoMLG extends GuiSettings {
     }
     @SubscribeEvent
     public void onPre(TickEvent.PlayerTickEvent e) {
+        if(!this.getStat()){
+            return;
+        }
+        if(!GuiSettings.isPlayerInGame()){
+            return;
+        }
         if (mc.thePlayer.fallDistance > 4.0F && this.getSlotWaterBucket() != -1 && this.isMLGNeeded()) {
             mc.thePlayer.rotationPitch = 90.0F;
             this.swapToWaterBucket(this.getSlotWaterBucket());

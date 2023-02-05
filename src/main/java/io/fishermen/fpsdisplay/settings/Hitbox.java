@@ -35,11 +35,17 @@ public class Hitbox extends GuiSettings{
     }
     @SubscribeEvent
     public void update(TickEvent.PlayerTickEvent E) {
+        if(!this.getStat()){
+            return;
+        }
         gmo(1.0F);
     }
 
     @SubscribeEvent
     public void m(MouseEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()) return;
         if (e.button == 0 && e.buttonstate && mv != null) {
             mc.objectMouseOver = mv;
@@ -48,6 +54,9 @@ public class Hitbox extends GuiSettings{
 
     @SubscribeEvent
     public void ef(TickEvent.RenderTickEvent ev) {
+        if(!this.getStat()){
+            return;
+        }
         // autoclick event
         if(!GuiSettings.isPlayerInGame()) return;
 
@@ -60,6 +69,9 @@ public class Hitbox extends GuiSettings{
 
     @SubscribeEvent
     public void r1(RenderWorldLastEvent e) {
+        if(!this.getStat()){
+            return;
+        }
         if (Show.i() && GuiSettings.isPlayerInGame()) {
             for (Entity en : mc.theWorld.loadedEntityList) {
                 if (en != mc.thePlayer && en instanceof EntityLivingBase && ((EntityLivingBase) en).deathTime == 0 && !(en instanceof EntityArmorStand) && !en.isInvisible()) {

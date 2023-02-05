@@ -18,6 +18,9 @@ public class phase extends GuiSettings {
 
     @SubscribeEvent
     public void a(RenderWorldLastEvent e){
+        if(!this.getStat()){
+            return;
+        }
         if(CaneReplace(mc.theWorld.getBlockState(new BlockPos(mc.thePlayer.posX-1,mc.thePlayer.posY,mc.thePlayer.posZ)).getBlock().getBlockState())){
             RenderBlock(new BlockPos(mc.thePlayer.posX-1,mc.thePlayer.posY,mc.thePlayer.posZ));
         }

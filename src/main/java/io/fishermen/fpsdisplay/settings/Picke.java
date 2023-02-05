@@ -25,6 +25,9 @@ public class Picke extends GuiSettings
     }
     @SubscribeEvent
     public void a(final RenderGameOverlayEvent.Post e) {
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }

@@ -16,6 +16,9 @@ public class AntiBot extends GuiSettings{
     }
     @SubscribeEvent
     public void onPre(final RenderLivingEvent.Specials.Pre d) {
+        if(!this.getStat()){
+            return;
+        }
         if(GuiSettings.isPlayerInGame()){
             Entity e = d.entity;
             if(e == null){

@@ -40,6 +40,9 @@ public class NoSlow extends GuiSettings {
     }
     @SubscribeEvent
     public void a(TickEvent.PlayerTickEvent e){
+        if(!this.getStat()){
+            return;
+        }
         if(!GuiSettings.isPlayerInGame()){
             return;
         }
