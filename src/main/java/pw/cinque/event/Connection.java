@@ -23,6 +23,7 @@ public class Connection extends ChannelDuplexHandler {
 
     }
 
+
     public void channelRead(ChannelHandlerContext ctx, Object packet) throws Exception {
         if (this.eventHandler.onPacket(packet, Side.IN)) {
             super.channelRead(ctx, packet);

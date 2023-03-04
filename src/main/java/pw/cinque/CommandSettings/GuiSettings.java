@@ -3,7 +3,7 @@ package pw.cinque.CommandSettings;
 import java.lang.reflect.Field;
 
 
-public class GuiSettings
+public abstract class GuiSettings
 {
     public String n;
     
@@ -50,4 +50,14 @@ public class GuiSettings
         nn(this.n);
         this.n = null;
     }
+    public String getName(){
+        return this.n;
+    }
+
+    public Object getValue() {
+        return null;
+    }
+
+    public abstract void setValue(Object object);
+
 }

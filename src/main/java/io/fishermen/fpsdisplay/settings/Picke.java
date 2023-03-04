@@ -21,7 +21,7 @@ public class Picke extends GuiSettings
     public Picke() {
         super(GuiSettings.a(new char[] { 'H', 'u', 'd' }), "", c4.render, 0, -1);
         this.avav(x = new CommandSettings("X",2,0,mc.displayWidth,1));
-        this.avav(y = new CommandSettings("X",2,0,mc.displayHeight,1));
+        this.avav(y = new CommandSettings("Y",2,0,mc.displayHeight,1));
     }
     @SubscribeEvent
     public void a(final RenderGameOverlayEvent.Post e) {
@@ -39,7 +39,7 @@ public class Picke extends GuiSettings
             return;
         }
         GL11.glPushMatrix();
-        Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow("UZI Client Ver 1.2.7 By Unicode", (float)x.g3tV4l4u3(), (float) y.g3tV4l4u3(), a(6000, -270));
+        Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow("UZI Client Ver 1.2.8 By Unicode", (float)x.g3tV4l4u3(), (float) y.g3tV4l4u3(), a(6000, -270));
         int yCount = (int) ((float) y.g3tV4l4u3() + 8);
         for (final GuiSettings mod : io.fishermen.fpsdisplay.settings.CommandSettings.m) {
             if (mod != null && mod != this && mod.g3t()) {

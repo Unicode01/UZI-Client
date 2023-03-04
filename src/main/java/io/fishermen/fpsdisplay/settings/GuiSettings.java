@@ -34,6 +34,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 import pw.cinque.event.EventSlowDown;
 import pw.cinque.event.Nan0EventRegister;
+import pw.cinque.keystrokes.Client;
 
 import java.util.ArrayList;
 
@@ -95,6 +96,27 @@ public abstract class GuiSettings
         GuiSettings.mc = Minecraft.getMinecraft();
         this.v = new ArrayList<pw.cinque.CommandSettings.GuiSettings>();
         this.ccc = c;
+        pw.cinque.keystrokes.Client.Hacks.add(this);
+    }
+    public void setKey(int Key){
+        this.kb = Key;
+    }
+    public void setToggled(Boolean Key){
+        if(Key){
+            this.en=true;
+            Nan0EventRegister.register(MinecraftForge.EVENT_BUS,this);
+            Nan0EventRegister.register(FMLCommonHandler.instance().bus(),this);
+            this.en();
+        }else if(this.en) {
+            this.en=false;
+            this.dd();
+        }
+    }
+    public int getKey(){
+        return kb;
+    }
+    public ArrayList<pw.cinque.CommandSettings.GuiSettings> getValue(){
+        return this.v;
     }
     
     public static GuiSettings g3tM0dul3(final Class<? extends GuiSettings> a) {
@@ -249,6 +271,10 @@ public abstract class GuiSettings
             d.setAccessible(false);
         }
         catch (Exception ex) {}
+    }
+
+    public String getName() {
+        return this.n;
     }
 
     public enum c4

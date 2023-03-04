@@ -74,6 +74,8 @@ public class CommandSettings
         this.r(new PingSpoof());
         this.r(new Aim2());
         this.r(new AutoGapple());
+        this.r(new SaveConfigs());
+        this.r(new LoadConfigs());
     }
     
     private void r(final GuiSettings mm) {

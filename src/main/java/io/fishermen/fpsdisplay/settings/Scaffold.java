@@ -51,7 +51,7 @@ public class Scaffold extends GuiSettings {
     private int slot;
     public Scaffold() {
         super(GuiSettings.a(new char[]{'S', 'c', 'a', 'f', 'f', 'o', 'l', 'd'}), "", c4.movement, 0, -1);
-        Scaffold.Packet = new ClickListener("Send Sneak Packet", true);
+        Scaffold.Packet = new ClickListener("Send Sneak Packet", false);
         KeepY = new ClickListener("KeepY",true);
         this.avav(Scaffold.Packet);
         this.avav(KeepY);

@@ -1,5 +1,6 @@
 package pw.cinque.timechanger;
 
+import io.fishermen.fpsdisplay.settings.Bo;
 import pw.cinque.CommandSettings.GuiSettings;
 
 public class ClickListener extends GuiSettings
@@ -24,5 +25,13 @@ public class ClickListener extends GuiSettings
     
     public void t() {
         this.v = !this.v;
+    }
+    @Override
+    public Object getValue(){
+        return this.v;
+    }
+    @Override
+    public void setValue(Object Value){
+        this.v = (Boolean)Value;
     }
 }

@@ -78,10 +78,13 @@ public void onLivingUpdate(LivingUpdateEvent livingupdateevent) {
         if (Minecraft.getMinecraft().theWorld != null) {
             PacketSniffer.onPacket(object,connection_side);
             NoFall.onPacket(object,connection_side);
-            Scaffold2.onPacket(object,connection_side);
             FastBreak.onPacket(object,connection_side);
             AutoFish.onPacket(object,connection_side);
             Wool.onPacket(object,connection_side);
+            flag = Scaffold2.onPacket(object,connection_side);
+            if(!flag){
+                return false;
+            }
             flag = Dada.onPacket(object,connection_side);
             if(!flag){
                 return false;

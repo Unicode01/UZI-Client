@@ -51,6 +51,8 @@ public class KeystrokesMod
         KeystrokesMod.eventsHandler = new EventsHandler();
         Nan0EventRegister.register(MinecraftForge.EVENT_BUS, KeystrokesMod.eventsHandler);
         Nan0EventRegister.register(FMLCommonHandler.instance().bus(), KeystrokesMod.eventsHandler);
+        new Client();
+        Client.loadHacks();
     }
     
     @SubscribeEvent

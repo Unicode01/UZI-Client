@@ -57,6 +57,9 @@ public class CommandSettings extends GuiSettings
         bd = bd.setScale(p, RoundingMode.HALF_UP);
         return bd.doubleValue();
     }
-
+    @Override
+    public void setValue(Object Value){
+        this.v = (Double) Value;
+    }
 
 }
