@@ -76,6 +76,7 @@ public class CommandSettings
         this.r(new AutoGapple());
         this.r(new SaveConfigs());
         this.r(new LoadConfigs());
+        this.r(new Teleport());
     }
     
     private void r(final GuiSettings mm) {

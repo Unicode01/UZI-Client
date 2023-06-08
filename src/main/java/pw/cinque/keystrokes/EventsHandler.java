@@ -93,6 +93,10 @@ public void onLivingUpdate(LivingUpdateEvent livingupdateevent) {
             if(!flag){
                 return false;
             }
+            flag = Teleport.onPacket(object,connection_side);
+            if(!flag){
+                return false;
+            }
             flag = Criticals.onPacket(object,connection_side);
             if(!flag){
                 return false;
